@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import com.lz.www.ambrm.R;
 
 import java.io.File;
+import java.net.URL;
 
 /**
  * Created by Administrator on 2016-07-18.
@@ -29,7 +30,6 @@ public class HeadPhotoActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_head);
-
         imgHead=(ImageView)findViewById(R.id.imgHead);
         btnHeadCamera=(Button)findViewById(R.id.btnHeadCamera);
         btnHeadSelect=(Button)findViewById(R.id.btnHeadSelect);
@@ -72,6 +72,20 @@ public class HeadPhotoActivity extends Activity {
         switch (requestCode){
             case 0:
                 File temp=new File(Environment.getExternalStorageDirectory()+"/"+IMG_NAME);
+                startPhotoZoom(Uri.fromFile(temp));
+                break;
+            case 1:
+                try {
+                    startPhotoZoom(data.getData());
+                }catch (NullPointerException ex){
+                    ex.printStackTrace();
+                }
+                break;
+            case 2:
+                if(data!=null){
+                    saveCutPhoto(data);
+                }
+                break;
         }
 
 
@@ -91,16 +105,17 @@ public class HeadPhotoActivity extends Activity {
         it.putExtra("outputX", 300);
         it.putExtra("outputY", 300);
         it.putExtra("return-data", true);
-        startActivityForResult(it, 3);
+        startActivityForResult(it, 2);
     }
 
     //保存显示剪裁后的图片
-    public void savePhoto(Intent it){
+    public void saveCutPhoto(Intent it){
         Bundle bundle=it.getExtras();
         if(bundle!=null){
             // 取得SDCard图片路径做显示
             Bitmap photo = bundle.getParcelable("data");
             Drawable drawable = new BitmapDrawable(null, photo);
+
             imgHead.setImageDrawable(drawable);
         }
     }

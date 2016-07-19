@@ -17,6 +17,7 @@ import com.lz.www.ambrm.ui.AmbLogActivity;
 import com.lz.www.ambrm.ui.AnimationActivity;
 import com.lz.www.ambrm.ui.ContractsActivity;
 import com.lz.www.ambrm.ui.DrawActivity;
+import com.lz.www.ambrm.ui.MapActivity;
 import com.lz.www.ambrm.ui.PhotoActivity;
 import com.lz.www.ambrm.ui.ScheduleActivity;
 import com.lz.www.ambrm.ui.ShakeActivity;
@@ -40,7 +41,7 @@ public class ShuFragment extends Fragment {
             R.drawable.b1, R.drawable.b2, R.drawable.b3,
             R.drawable.b4 };
     private String[] iconName = { "通讯录", "日程安排", "摇一摇", "员工风采", "绘画动画", "短信", "铃声",
-            "设置", "语音", "天气", "浏览器", "系统日志" };
+            "设置", "语音", "天气", "地理位置", "系统日志" };
 
 
 
@@ -84,6 +85,10 @@ public class ShuFragment extends Fragment {
                     case 4:
                         Intent it4=new Intent(getActivity(),AnimationActivity.class);
                         startActivity(it4);
+                        break;
+                    case 10:
+                        Intent it10=new Intent(getActivity(), MapActivity.class);
+                        startActivity(it10);
                         break;
                     case 11:
                         Intent it11=new Intent(getActivity(), AmbLogActivity.class);
