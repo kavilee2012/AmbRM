@@ -40,8 +40,8 @@ public class ShuFragment extends Fragment {
             R.drawable.b2, R.drawable.b3, R.drawable.b4,
             R.drawable.b1, R.drawable.b2, R.drawable.b3,
             R.drawable.b4 };
-    private String[] iconName = { "通讯录", "日程安排", "摇一摇", "员工风采", "绘画动画", "短信", "铃声",
-            "设置", "语音", "天气", "地理位置", "系统日志" };
+    private String[] iconName = { "通讯录", "日程安排", "摇一摇", "员工风采", "绘画动画", "null", "null",
+            "null", "null", "null", "地理位置", "系统日志" };
 
 
 
