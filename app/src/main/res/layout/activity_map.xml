@@ -4,6 +4,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/txtMapLocation"
+        android:text="123"
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
     <com.baidu.mapapi.map.MapView
         android:id="@+id/mapAmb"
         android:clickable="true"
