@@ -2,6 +2,9 @@ package com.lz.www.ambrm.ui;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -17,7 +20,7 @@ import java.util.Map;
 /**
  * Created by Administrator on 2016-06-29.
  */
-public class ContractsActivity extends Activity {
+public class ContractsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,8 @@ public class ContractsActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_userlist);
+
+       // getActionBar().show();
 
         ListView lvContacts=(ListView)findViewById(R.id.lvUserList);
 
@@ -41,5 +46,11 @@ public class ContractsActivity extends Activity {
         SimpleAdapter adapter=new SimpleAdapter(this,list,R.layout.news_list_item,new String[]{"name","number"},new int[]{R.id.tvTitle,R.id.tvContent});
 
         lvContacts.setAdapter(adapter);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.action_menu,menu);
+        return true;
     }
 }

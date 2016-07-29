@@ -7,6 +7,7 @@ import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.AnimationSet;
 import android.widget.Button;
@@ -18,8 +19,9 @@ import com.lz.www.ambrm.model.Point;
 /**
  * Created by Administrator on 2016-07-16.
  */
-public class AnimationActivity extends Activity {
+public class AnimationActivity extends AppCompatActivity {
 
+    android.app.ActionBar actionBar;
     TextView txtContent;
     Button btnStart;
     @Override
@@ -27,6 +29,10 @@ public class AnimationActivity extends Activity {
         super.onCreate(savedInstanceState);
        // setContentView(R.layout.activity_animation);
         setContentView(new MyAnimView(this));
+
+        actionBar = getActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
 //        txtContent=(TextView)findViewById(R.id.txtAnimation);
 //        btnStart=(Button)findViewById(R.id.btnStart);
 //        btnStart.setOnClickListener(new View.OnClickListener() {

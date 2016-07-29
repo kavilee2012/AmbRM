@@ -7,12 +7,16 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
 /**
  * Created by Administrator on 2016-07-08.
  */
-public class ShakeActivity extends Activity {
+public class ShakeActivity extends AppCompatActivity  {
 
     private SensorManager sensorManager;
     @Override

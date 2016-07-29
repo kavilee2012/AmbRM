@@ -27,8 +27,8 @@
         android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/btnHeadCancel"
-        android:text="取消"
+        android:id="@+id/btnHeadUpload"
+        android:text="上传"
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
